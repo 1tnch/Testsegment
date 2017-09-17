@@ -1,0 +1,1300 @@
+#define counter_t 4
+#define time_d 200
+#define time_d2 100
+#define time_d3 50
+#define NUMBERS 10
+#define SEGMENTS 7
+#define DIGITS  4
+int minute_time = 0;
+
+int LIGHTS[NUMBERS][SEGMENTS] = {
+  //   a
+  // f   b
+  //   g
+  // e   c
+  //   d
+  
+  //  a,    b,    c,    d,    e,    f,    g
+  {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH,  LOW}, //0
+  { LOW, HIGH, HIGH,  LOW,  LOW,  LOW,  LOW}, //1
+  {HIGH, HIGH,  LOW, HIGH, HIGH,  LOW, HIGH}, //2
+  {HIGH, HIGH, HIGH, HIGH,  LOW,  LOW, HIGH}, //3
+  { LOW, HIGH, HIGH,  LOW,  LOW, HIGH, HIGH}, //4
+  {HIGH,  LOW, HIGH, HIGH,  LOW, HIGH, HIGH}, //5
+  { LOW,  LOW, HIGH, HIGH, HIGH, HIGH, HIGH}, //6
+  {HIGH, HIGH, HIGH,  LOW,  LOW,  LOW,  LOW}, //7
+  {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, HIGH}, //8
+  {HIGH, HIGH, HIGH,  LOW,  LOW, HIGH, HIGH}  //9
+};
+
+int DIGIT_PINS[DIGITS] = {1, 2, 3, 4};
+int LED7_PINS[SEGMENTS] = {9, 7, 10, 5, 6, 8, 11};
+
+void setup() {
+  int i;
+  for(i = 0; i < DIGITS; i++) {
+    pinMode(DIGIT_PINS[i], OUTPUT);
+  }
+  // put your setup code here, to run once:
+  for(i = 0; i < SEGMENTS; i++) {
+    pinMode(LED7_PINS[i], OUTPUT);
+  }
+
+}
+
+
+ //   a11
+  // 5f   b7
+  //   g6
+  // e8   c10
+  //   d9
+
+  
+void loop() {
+
+
+ for (int i=0; i<1; i++){
+
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 1st 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 2nd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+  digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+
+  for (int i=0; i<2; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 3rd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, LOW);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 4th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, LOW);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+
+  }
+for (int i=0; i<8; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 5th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , LOW);
+ delay(time_d3);
+}
+}
+
+
+
+
+ for (int i=0; i<1; i++){
+
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1st 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 2nd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+  digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+  for (int i=0; i<2; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 3rd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, LOW);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+ 
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 4th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, LOW);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+  }
+  for (int i=0; i<4; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 5th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , LOW);
+ delay(time_d3);
+  }
+}
+
+ for (int i=0; i<1; i++){
+
+ digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 1st 2
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 2nd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+  digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(time_d);
+  for (int i=0; i<2; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 3rd 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, LOW);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+ 
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 4th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, LOW);
+ digitalWrite(5 , HIGH);
+ delay(time_d2);
+ }
+for (int i=0; i<4; i++){
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 5th 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ digitalWrite(3, HIGH);
+ digitalWrite(2, HIGH);
+ digitalWrite(1, HIGH);
+ digitalWrite(4, HIGH);
+ digitalWrite(5 , LOW);
+ delay(time_d3);
+}
+}
+
+/*
+ for (int i=0; i<1; i++){ 
+
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+   digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+ 
+  digitalWrite(3, HIGH);
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  delay(500);
+ }
+ 
+  for (int i=0; i<1; i++){  
+ 
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200);   
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+   digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 2
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+   digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+ for (int i=0; i<1; i++){ 
+
+ 
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+   
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 3
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+for (int i=0; i<1; i++){  
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 4
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+ for (int i=0; i<1; i++){  
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 5
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+ 
+ 
+  for (int i=0; i<1; i++){  
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+   digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 6
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 7
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+ digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 8
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+
+ digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 9
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+ for (int i=0; i<1; i++){ 
+
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+   digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+ 
+  digitalWrite(3, HIGH);
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  delay(500);
+ }
+ 
+  for (int i=0; i<1; i++){  
+ 
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200);   
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+   digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 2
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+   digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+ for (int i=0; i<1; i++){ 
+
+ 
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+   
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 3
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 4
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+ for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 5
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+ 
+ 
+  for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+   digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 6
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+   digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 7
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 8
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+  for (int i=0; i<1; i++){  
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);  // 1
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+
+ digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);  // 9
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+
+
+for (int i=0; i<1; i++){  
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  delay(200); 
+    
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+
+digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  delay(300);
+  
+
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);  // 0
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(13, LOW);
+
+ 
+  digitalWrite(1, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(500);
+ }
+ */
+ //****************************************************//
+}
+
+  
+  
+  // put your main code here, to run repeatedly:
